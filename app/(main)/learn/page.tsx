@@ -1,5 +1,6 @@
 import FeedWrapper from "@/components/feed-wrapper";
 import StickyWrapper from "@/components/sticky-wrapper";
+import Header from "../header";
 
 function LearnPage() {
 	return (
@@ -10,9 +11,7 @@ function LearnPage() {
 				<div className="h-[100px] w-full bg-red-500">sticky sidebar</div>
 			</StickyWrapper>
 			<FeedWrapper>
-				<div className="h-[200px] w-full bg-blue-500 mb-1">feed</div>
-				<div className="h-[200px] w-full bg-blue-500 mb-1">feed</div>
-				<div className="h-[200px] w-full bg-blue-500 mb-1">feed</div>
+				<Header title="English" />
 			</FeedWrapper>
 		</div>
 	);
