@@ -1,14 +1,18 @@
 import FeedWrapper from "@/components/feed-wrapper";
 import StickyWrapper from "@/components/sticky-wrapper";
+import UserProgress from "@/components/user-progress";
 import Header from "../header";
 
 function LearnPage() {
 	return (
 		<div className="flex flex-row-reverse gap-[48px] px-6">
 			<StickyWrapper>
-				<div className="h-[100px] w-full bg-red-500">sticky sidebar</div>
-				<div className="h-[100px] w-full bg-red-500">sticky sidebar</div>
-				<div className="h-[100px] w-full bg-red-500">sticky sidebar</div>
+				<UserProgress
+					activeCourse={{ title: "English", imageSrc: "/us.svg" }}
+					hearts={10}
+					points={50}
+					hasActiveSubscription={false}
+				/>
 			</StickyWrapper>
 			<FeedWrapper>
 				<Header title="English" />
