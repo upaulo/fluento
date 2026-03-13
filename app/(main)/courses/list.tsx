@@ -1,11 +1,11 @@
 "use client";
 
-import type { courses } from "@/database/schama";
+import type { courses, userProgress } from "@/database/schama";
 import Card from "./card";
 
 type Props = {
 	courses: (typeof courses.$inferSelect)[];
-	activeCourseId: number;
+	activeCourseId?: typeof userProgress.$inferSelect.activeCourseId;
 };
 
 function List({ courses, activeCourseId }: Props) {
