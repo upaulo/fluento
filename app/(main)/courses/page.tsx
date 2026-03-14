@@ -1,4 +1,4 @@
-import { getCourses, getUserProgress } from "@/database/query";
+import { getCourses, getUserProgress } from "@/database/queries";
 import List from "./list";
 
 async function CoursesPage() {

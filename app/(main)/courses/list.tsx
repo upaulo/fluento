@@ -1,6 +1,6 @@
 "use client";
 
-import type { courses, userProgress } from "@/database/schama";
+import type { courses, userProgress } from "@/database/schema";
 import Card from "./card";
 
 type Props = {
