@@ -15,14 +15,14 @@ async function LearnPage() {
 		<div className="flex flex-row-reverse gap-[48px] px-6">
 			<StickyWrapper>
 				<UserProgress
-					activeCourse={{ title: "English", imageSrc: "/us.svg" }}
-					hearts={10}
-					points={50}
+					activeCourse={userProgress.activeCourse}
+					hearts={userProgress.hearts}
+					points={userProgress.points}
 					hasActiveSubscription={false}
 				/>
 			</StickyWrapper>
 			<FeedWrapper>
-				<Header title="English" />
+				<Header title={userProgress.activeCourse.title} />
 			</FeedWrapper>
 		</div>
 	);

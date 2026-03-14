@@ -23,8 +23,16 @@ function List({ courses, activeCourseId }: Props) {
 			return router.push("/learn");
 		}
 
-		startTransition(() => {
-			upsertUserProgress(id).catch(() => toast.error("Something went wrong"));
+		startTransition(async () => {
+			try {
+				const result = await upsertUserProgress(id);
+
+				if (result?.success) {
+					router.push("/learn");
+				}
+			} catch {
+				toast.error("Something went wrong");
+			}
 		});
 	};
 

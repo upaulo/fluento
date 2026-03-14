@@ -9,7 +9,8 @@
 		"lint": "biome check",
 		"format": "biome format --write",
 		"db:studio": "bunx drizzle-kit studio",
-		"db:push": "bunx drizzle-kit push"
+		"db:push": "bunx drizzle-kit push",
+		"db:seed": "bun ./scripts/seed.ts"
 	},
 	"dependencies": {
 		"@clerk/nextjs": "^7.0.1",
