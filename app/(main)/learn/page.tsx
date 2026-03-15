@@ -2,11 +2,12 @@ import { redirect } from "next/navigation";
 import FeedWrapper from "@/components/feed-wrapper";
 import StickyWrapper from "@/components/sticky-wrapper";
 import UserProgress from "@/components/user-progress";
-import { getUserProgress } from "@/database/queries";
+import { getUnits, getUserProgress } from "@/database/queries";
 import Header from "./header";
 
 async function LearnPage() {
 	const userProgress = await getUserProgress();
+	const unitsData = await getUnits();
 
 	if (!userProgress || !userProgress.activeCourse) {
 		redirect("/courses");
@@ -23,6 +24,11 @@ async function LearnPage() {
 			</StickyWrapper>
 			<FeedWrapper>
 				<Header title={userProgress.activeCourse.title} />
+				{unitsData.map((unit) => (
+					<div key={unit.id} className="mb-10">
+						{JSON.stringify(unit)}
+					</div>
+				))}
 			</FeedWrapper>
 		</div>
 	);

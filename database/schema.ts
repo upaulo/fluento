@@ -36,13 +36,13 @@ export const unitsRelations = relations(units, ({ one, many }) => ({
 		fields: [units.courseId],
 		references: [courses.id],
 	}),
-	lesson: many(lessons),
+	lessons: many(lessons),
 }));
 
 export const lessons = pgTable("lessons", {
 	id: serial("id").primaryKey(),
 	title: text("title").notNull(),
-	unitId: integer("unit)id")
+	unitId: integer("unit_id")
 		.references(() => units.id, {
 			onDelete: "cascade",
 		})
